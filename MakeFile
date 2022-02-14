@@ -1,0 +1,4 @@
+build:
+	g++ src/*.cpp -o tee2 -I./libs/tclap/include/ -I./include/
+run:
+	./tee2
