@@ -35,6 +35,10 @@ int main(int argc, char** argv)
             filestream.Create(output);
         }
         
+        // Print user input
+        std::cout << output << std::endl;
+
+
     } catch (TCLAP::ArgException &e) { // catch exceptions 
             std::cerr << "error: " << e.error() << " for arg " << e.argId() << std::endl; 
     }
