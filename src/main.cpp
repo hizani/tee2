@@ -19,7 +19,22 @@ int main(int argc, char** argv)
         std::string filename = filenameArg.getValue();
         bool appendFlag = reverseSwitch.getValue();
 
+        // Read user input
+        std::string line;
+        std::string output;
+        while(std::getline(std::cin, line))
+            output += line + "\n";
 
+        // Define filestream object
+        FileStream filestream(filename);
+        
+        if ( appendFlag ) {
+            filestream.AppendOrCreate(output);
+        }
+        else {
+            filestream.Create(output);
+        }
+        
     } catch (TCLAP::ArgException &e) { // catch exceptions 
             std::cerr << "error: " << e.error() << " for arg " << e.argId() << std::endl; 
     }
